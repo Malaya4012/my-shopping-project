@@ -1,0 +1,80 @@
+.accordion {
+    background-color: #232f3e;;
+    color: white;
+    padding: 20px;
+    width: 97%;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.accordion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #e50914;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion-title {
+    flex-grow: 1;
+    text-align: left;
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.accordion-toggle {
+    position: absolute;
+    right: 10px; /* Move the button to the right side */
+    background-color: #e50914;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+    background-color: #f40612;
+}
+
+.accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    padding: 0 10px;
+}
+
+.accordion-content.open {
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.accordion-content.closed {
+    max-height: 0;
+    opacity: 0;
+}

@@ -1,0 +1,419 @@
+/* src/styles/Header.css */
+
+/* Header Container */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #232f3e; /* Amazon-like dark blue */
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;      
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .header-container.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Logo Section */
+  .header-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Make the logo clickable */
+    padding: 10px;
+  }
+  
+  .header-logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+  }
+  
+  .header-logo-text {
+    font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+    
+  }
+  .header-logo:hover .header-logo-text {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  /* Location Section */
+  .header-location {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    gap: 10%;
+    
+  }
+  
+  .header-location-icon {
+    font-size: 20px;
+    margin-right: 5px;
+    
+  }
+  
+  .header-location-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header-location-label {
+    font-size: 12px;
+    color: #ccc;
+  }
+  
+  .header-location-city {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Search Bar */
+  .header-search-bar {
+    display: flex;
+    align-items: center;
+    flex: 3;
+    max-width: 600px;
+  }
+  
+  .header-search-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .header-search-button {
+    background-color: #febd69; /* Amazon-like orange */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-search-button svg {
+    font-size: 20px;
+    color: #232f3e;
+  }
+  
+  /* Right Links */
+  .header-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 2;
+  }
+  
+  .header-account,
+  .header-orders {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  
+  .header-account-label,
+  .header-orders-label {
+    font-size: 12px;
+    color: #ccc;
+  }
+  
+  .header-account-dropdown,
+  .header-orders-sub {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .header-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .header-cart-icon {
+    font-size: 24px;
+  }
+  
+  .header-cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #febd69;
+    color: #232f3e;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header-logo-text {
+      display: none; /* Hide text on smaller screens */
+    }
+  
+    .header-search-bar {
+      display: none; /* Hide search bar on smaller screens */
+    }
+  
+    .header-links {
+      flex: 1;
+      justify-content: flex-end;
+    }
+  
+    .header-location-text {
+      display: none; /* Optionally hide location text */
+    }
+  }
+  
+  /* Hover Effects */
+  .header-account:hover,
+  .header-orders:hover,
+  .header-cart:hover,
+  .header-location:hover {
+    color: #febd69; /* Change text color on hover */
+  }
+  
+  .header-search-button:hover {
+    background-color: #f3a847; /* Darken search button on hover */
+  }
+  
+  /* Make the logo circular */
+.circular-logo {
+    width: 60px; /* Adjust the size of the logo as needed */
+    height: 60px; /* Make the width and height equal for a perfect circle */
+    border-radius: 50%; /* This makes the image circular */
+    overflow: hidden; /* Ensures no part of the image overflows the circle */
+    border: 2px solid #ccc; /* Optional: Add a border around the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover; /* Ensure the image scales properly inside the circle */
+  }
+  /* Popup Container */
+.location-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(75, 72, 72, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Popup Content */
+.popup-content {
+  background: rgb(19, 65, 55);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(12, 12, 12, 0.3);
+  width: 300px;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-actions button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-actions button:first-child {
+  background: #c2adad;
+  color: #333;
+}
+
+.popup-actions button:last-child {
+  background: #febd69;
+  color: white;
+}
+/* Language Button */
+.header-language {
+  position: relative;
+  margin-left: 10px;
+}
+
+.language-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.language-dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.language-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+/* Overall Popup Styling */
+.account-popup-two {
+  position: absolute;
+  top: 60px; /* Adjust according to the header position */
+  right: 20px; /* Align to the right edge */
+  width: 500px; /* Set an appropriate width for the popup */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Popup Header */
+.popup-header-two {
+  background-color: #f9f9f9;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.popup-signin-button,
+.popup-register-button {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-signin-button:hover,
+.popup-register-button:hover {
+  background-color: #005bb5;
+}
+
+/* Popup Content */
+.popup-content-two {
+  display: flex;
+  padding: 16px;
+  gap: 20px; /* Add space between columns */
+}
+
+/* Left and Right Columns */
+.popup-column-one {
+  flex: 1;
+  padding: 8px;
+}
+
+.popup-column-one h4 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.popup-column-one ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-column-one li {
+  margin: 8px 0;
+}
+
+.popup-column-one li a {
+  text-decoration: none;
+  color: #0073e6;
+  font-size: 0.95em;
+}
+
+.popup-column-one li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .account-popup-two {
+    width: 100%; /* Make it full-width for smaller screens */
+    right: 0;
+    left: 0;
+  }
+
+  .popup-content-two {
+    flex-direction: column; /* Stack the columns on smaller screens */
+    gap: 10px;
+  }
+}
+/* Close Button Styling */
+.popup-actions button {
+  background-color: #ff4d4d; /* Red background */
+  color: white; /* White text */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-actions button:hover {
+  background-color: #d93636; /* Darker red on hover */
+}
+
+
+  

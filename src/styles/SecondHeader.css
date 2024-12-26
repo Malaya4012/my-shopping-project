@@ -1,0 +1,158 @@
+/* Overall container for the second header */
+.second-header {
+  background-color: #190c1f; /* Amazon-style dark blue background */
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd; /* Subtle border at the bottom */
+}
+
+/* Navigation container for layout */
+.second-header-nav {
+  display: flex;
+  justify-content: space-between; /* Space between menu items and button */
+  align-items: center;
+}
+
+.second-header-list {
+  display: flex;
+  gap: 8px; /* Space between each list item */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* Enables horizontal scrolling if items exceed container width */
+  white-space: nowrap; /* Prevents items from wrapping onto a new line */
+}
+
+/* Individual navigation links */
+.second-header-item {
+  font-size: 14px;
+  color: #ffffff; /* White text to contrast with the dark background */
+  cursor: pointer;
+  padding: 5px 10px; /* Add padding for better hover targeting */
+  border: 2px solid transparent; /* Default border invisible */
+  border-radius: 4px; /* Rounded corners */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+.second-header-item.hovered {
+  border-color: white; /* Amazon's light orange for the border */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hidden */
+  width: 300px;
+  height: 100%;
+  background-color: white; /* Amazon-like dark header color */
+  color: #fff; /* White text */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* Slide in when open */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #232f3e;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+}
+
+/* Sign-In Container */
+.signin-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Circular Icon */
+.signin-icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover; /* Ensures the image fits within the circle */
+  margin-right: 10px;
+  border: 2px solid #ccc; /* Optional border */
+}
+
+/* Sign-In Link */
+.signin-link {
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Default text color */
+}
+
+.signin-link:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.hello-text {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc; /* Subdued color */
+}
+
+.hello-text span {
+  font-weight: bold;
+  color: #ff9900; /* Highlight color for "Sign in" */
+}
+
+.signin-link:hover span {
+  color: #fff; /* Change "Sign in" color on hover */
+}
+
+.sidebar-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #ff9900; /* Amazon highlight color */
+}
+
+/* Sidebar Menu Styles */
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #221717;
+  color: #1a0e0e;
+}
+
+.sidebar ul li:hover {
+  background-color: #cfd2d6; /* Darker highlight on hover */
+  cursor: pointer;
+}
+/* Existing styles... */
+
+.sidebar-menu {
+  overflow-y: auto;
+  max-height: calc(100vh - 80px); /* Allows scrolling */
+}
+.sidebar-title
+{
+  color: black;
+}
+
+/* More styles... */
+
+
