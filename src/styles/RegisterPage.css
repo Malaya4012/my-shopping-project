@@ -1,52 +1,133 @@
 /* RegisterPage.css */
+
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+/* Register Page Container */
 .register-page {
-    padding: 20px;
-    max-width: 500px;
-    margin: 50px auto;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .register-page h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .register-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .register-form label {
-    margin-bottom: 15px;
-    color: #555;
-    font-size: 14px;
-  }
-  
-  .register-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .register-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .register-button:hover {
-    background-color: #0056b3;
-  }
-  
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Page Title */
+.register-page h1 {
+  font-size: 24px;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Fields */
+.register-form label {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+  display: block;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.register-form input:focus {
+  border-color: #f90;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+}
+
+/* Submit Button */
+.register-button {
+  background-color: #f90;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  background-color: #e68a00;
+}
+
+/* Information Section */
+.info-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.info-section p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.info-link {
+  color: #0073bb; /* Amazon's blue link color */
+  text-decoration: none;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
+
+/* Terms and Policy Section */
+.terms {
+  font-size: 12px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.terms a {
+  color: #0073bb;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Footer and Header */
+header, footer {
+  background-color: #232f3e;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 30px;
+}
+/* Success Message */
+.message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: green;
+  font-weight: bold;
+}
+

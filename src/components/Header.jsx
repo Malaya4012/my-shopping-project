@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 import { CartContext } from '../context/CartContext';
 import { FaSearch, FaUser, FaShoppingCart, FaMapMarkerAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +14,7 @@ const Header = ({ scrolled, setSearchTerm }) => {
   const [isLanguageDropdownVisible, setLanguageDropdownVisible] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('English');
   const { cart } = useContext(CartContext);
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   const [isAccountPopupVisible, setAccountPopupVisible] = useState(false);
 
@@ -93,8 +95,9 @@ const Header = ({ scrolled, setSearchTerm }) => {
           <div
             className="header-account"
             onClick={toggleAccountPopup}
+            
           >
-            <span className="header-account-label">Hello, Sign in</span>
+            <span className="header-account-label">{user ? `Hello, ${user.name}` : 'Hello, Sign in'}</span>
             <span className="header-account-dropdown">Account & Lists</span>
           </div>
 
@@ -145,7 +148,7 @@ const Header = ({ scrolled, setSearchTerm }) => {
   <div className="account-popup-two">
     {/* Popup Header */}
     <div className="popup-header-two">
-      <button className="popup-signin-button">Sign In</button>
+      <button onClick={() => navigate('/signin')}className="popup-signin-button">Sign In</button>
       <button onClick={() => navigate('/register')} className="popup-register-button">
               Register
       </button>    </div>
